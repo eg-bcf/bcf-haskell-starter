@@ -1,0 +1,81 @@
+name:                scotty-starter
+version:             0.1.0.0
+github:              "githubuser/scotty-starter"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2020 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/scotty-starter#readme>
+
+default-extensions:
+- OverloadedStrings
+- QuasiQuotes
+- GeneralizedNewtypeDeriving
+- ConstraintKinds
+- FlexibleContexts
+- TemplateHaskell
+- FlexibleInstances
+- NoImplicitPrelude
+- ScopedTypeVariables
+
+dependencies:
+- base >= 4.7 && < 5
+- classy-prelude 
+- scotty
+- wai
+- wai-extra
+- wai-cors
+- http-types
+- aeson
+- time
+- mtl
+- postgresql-simple
+- postgresql-simple-migration
+- resource-pool
+- lens
+- swagger2
+- load-env
+  
+  #ghc-options:
+  #- -Wall
+  #- -Werror
+  #- -Wincomplete-record-updates
+  #- -Wincomplete-uni-patterns
+  #- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  scotty-starter-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - scotty-starter
+
+tests:
+  scotty-starter-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - scotty-starter

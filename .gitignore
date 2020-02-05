@@ -1,0 +1,4 @@
+.stack-work/
+scotty-starter.cabal
+.env
+*~
